@@ -25,7 +25,9 @@ def get_packages(package):
 
 
 def get_install_requires():
-    if platform.python_implementation() == 'PyPy':
+    if True:
+        crypto_lib = 'pycryptodomex ==3.4.9'
+    elif platform.python_implementation() == 'PyPy':
         crypto_lib = 'pycryptodome >=3.3.1, <3.4.0'
     else:
         crypto_lib = 'pycrypto >=2.6.0, <2.7.0'
@@ -38,7 +40,7 @@ def get_install_requires():
 
 
 setup(
-    name='python-jose',
+    name='python-jose-ext',
     version=jose.__version__,
     author='Michael Davis',
     author_email='mike.philip.davis@gmail.com',
